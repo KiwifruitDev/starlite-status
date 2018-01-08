@@ -57,3 +57,12 @@ typings/
 # dotenv environment variables file
 .env
 
+# Actual bot token, not included to avoid malicious use
+tokena.txt
+
+# Actual launch batch, not included as it uses the above txt file
+Launcha.bat
+
+# Actual servers json, not included as it directs towards my personal servers
+server.json
+

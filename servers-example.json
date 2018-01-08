@@ -1,0 +1,16 @@
+[
+    {
+        "name": "A roleplaying server",
+        "ip": "192.168.1.20",
+        "port": "27015",
+        "game": "garrysmod",
+        "cache": "none"
+    },
+    {
+        "name": "A different server",
+        "ip": "mc.example.com",
+        "port": "25565",
+        "game": "minecraft",
+        "cache": "A different server: Server is now online."
+    }
+]

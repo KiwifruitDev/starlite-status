@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "discord.js": "github:hydrabolt/discord.js",
+    "gamedig": "^1.0.37",
+    "delay": "^2.0.0"
+  },
+  "name": "starlite-status",
+  "version": "1.0.0",
+  "description": "",
+  "main": "slgstatus.js",
+  "author": "TeamPopplio",
+  "homepage": "https://github.com/TeamPopplio/starlite-status",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node slgstatus.js ./token.txt"
+  }
+}
