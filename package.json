@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "discord.js": "github:hydrabolt/discord.js",
+    "discord.js": "github:discordjs/discord.js",
     "gamedig": "^1.0.37",
     "delay": "^2.0.0"
   },
