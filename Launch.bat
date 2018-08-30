@@ -3,6 +3,6 @@ cls
 echo Launching...
 title SLGStatus
 :start
-node --trace-warnings ./ ./token.txt
+node --trace-warnings ./ ./data/token.txt
 echo Restarting...
 goto start

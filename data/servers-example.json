@@ -1,0 +1,86 @@
+[
+    {
+        "name": "The Minecraft MOTD is displayed, but not if you're using 'minecraftping' or any game that doesn't support names.",
+        "nameoverride": true,
+        "note1": "   If you're using 'minecraftping' or a game without server names, enable the nameoverride to use the discriminator name above.",
+
+        "steamjoinurl": false,
+        "note2": "   Minecraft and other non-steam based servers shouldn't allow the steam join url. (aka steam://connect/[IP]:[PORT])",
+
+        "game": "minecraft",
+        "note3": "  Using 'minecraft' as the game may not work sometimes. In the event where it doesn't work, try 'minecraftping' instead.",
+
+        "gametrackergame": "minecraft",
+        "note4": [
+            "  If the name of the gamedig game ('game' string) doesn't match a game on GameTracker, set 'gametrackername' to the GT game name.",
+            "  To find the GT game, go to a server on GT with the game and open the map image in a new tab, then use the name after '160x120/'"
+        ],
+
+        "mapprefixreplacements": [
+            ["gamemode_","gm_"]
+        ],
+        "note5":"  Sometimes a map prefix is added, but screws up GT's map preview. Add a prefix and a replacement here to remove it for the GT preview.",
+
+        "ip": "mc.example.com",
+        "queryip": "192.168.1.20",
+        "port": "25565",
+        "channel": "Enable developer mode, then right click your channel and replace this text with the ID.",
+        "message": "This will only generate once the first message is sent to the channel. Delete this to make a new message.",
+        "badmaps": [
+            "   Minecraft maps on gametracker return the world name. If you want to show a custom icon, upload a screenshot with your",
+            "   default world name (if the name is not already taken) at https://www.gametracker.com/account/manage/map_upload.php",
+            "   If your world name is taken by another server, add the world name to this list if you don't want to see its icon.",
+            "plotworld",
+            "plots",
+            "this_world_is_taken"
+        ]
+    },
+    {
+        "name": "Discriminator name, not used on the actual server updates unless you enable nameoverride.",
+        "nameoverride": false,
+        "steamjoinurl": true,
+        "ip": "60.180.194.182",
+        "queryip": "192.168.1.65",
+        "port": "27015",
+        "game": "garrysmod",
+        "channel": "398813625516687362",
+        "badmaps": [
+            "   These maps don't have a GameTracker map icon, check to see if they do by going to",
+            "   https://image.gametracker.com/images/maps/160x120/[GAME GOES HERE]/[MAP NAME].jpg",
+            "   and if it returns a 404 error, add it to this list and delete these 3 entries.   ",
+            "jb_concretehell_beta2",
+            "jb_italia_beta4",
+            "jb_lego_jail_v4",
+            "jb_razor_electric_b4"
+        ]
+    },
+    {
+        "ip": "60.180.194.182",
+        "queryip": "192.168.1.88",
+        "port": "27018",
+        "game": "tf2",
+        "channel": "479836705084538890",
+
+        "notes": [
+            "   This is the bare minimum needed for server listings, at least with a source engine-based game.",
+            "   Visit https://github.com/sonicsnes/node-gamedig/blob/master/README.md for a list of games that may or may not work.",
+            "   Only Garry's Mod, Team Fortress 2, Minecraft, and Unreal Tournament 2004 servers have been tested to work properly. Use at your own risk."
+        ]
+    },
+    {
+        "name": "WARFARE",
+        "nameoverride": true,
+        "steamjoinurl": false,
+        "ip": "g2.miasma.org",
+        "queryip": "g2.miasma.org",
+        "port": "7777",
+        "game": "ut2004",
+        "gametrackergame": "ut2k4",
+        "mapprefixreplacements": [
+            ["vctf_","ctf_"]
+        ],
+        "channel": "479836705084538890",
+
+        "note": "This is a real server with added syntax for proper support. functions.js also removes asterisks (*) and dashes (-) for better support with GameTracker."
+    }
+]
