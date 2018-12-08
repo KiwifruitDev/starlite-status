@@ -91,18 +91,21 @@ function justwork(a,m) { // Send messages to the channel after checks have been 
             playercollection.push("None")
 
         for(var i = 0; i != numplayers; i++) {
-            if(state.players.length > 0 && state.players[i].name) {
-                if(state.players[i].score)
-                    state.players[i].name = (state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~"))+" | Score: "+state.players[i].score
-                if((playercollection.join("\n").length + (state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~")).length) <= 1012) {
+            if(state.players[i] != undefined) {
+                console.log(state.players[i])
+                if(state.players.length > 0 && state.players[i].name) {
                     if(state.players[i].score)
-                        playercollection.push((state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~"))+" | Score: "+state.players[i].score)
-                    else
-                        playercollection.push((state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~")))
-                } else playercollection.push("+ "+(numplayers-(i+1))+" more")
-            } else playercollection = ["Player info is private."]
+                        state.players[i].name = (state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~"))+" | Score: "+state.players[i].score
+                    if((playercollection.join("\n").length + (state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~")).length) <= 1012) {
+                        if(state.players[i].score)
+                            playercollection.push((state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~"))+" | Score: "+state.players[i].score)
+                        else
+                            playercollection.push((state.players[i].name.replace("*","\\*").replace("_","\\_").replace("`","\\`").replace("~","\\~")))
+                    } else playercollection.push("+ "+(numplayers-(i+1))+" more")
+                } else playercollection = ["Player info is private."]
+            }
         }
-        console.log(state)
+        //console.log(state)
         var embed = new discord.MessageEmbed()
         if(state.name) 
             embed.setTitle(state.name)
@@ -127,10 +130,10 @@ function justwork(a,m) { // Send messages to the channel after checks have been 
         else if(map)
             embed.setThumbnail("https://image.gametracker.com/images/maps/160x120/"+g+"/"+map+".jpg")
         else embed.setThumbnail("https://image.gametracker.com/images/maps/160x120/nomap.jpg")
-        console.log(embed.thumbnail)
         client.channels.get(a.channel).messages.fetch(a.message)
         .then(message => message.edit({embed:embed}))
         .catch((error)=> {
+            console.log(error)
             client.channels.get(a.channel).send("",{embed:embed}).then(message=>{
                 servers[m].message = message.id
                 console.log(message.id)
